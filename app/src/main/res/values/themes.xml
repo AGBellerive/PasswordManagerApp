@@ -6,4 +6,11 @@
     </style>
 
     <style name="Theme.PasswordManager" parent="Base.Theme.PasswordManager" />
+
+    <style name="Theme.App.SplashScreen" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/splashScreenBlue</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_logo</item>
+        <item name="postSplashScreenTheme">@style/Base.Theme.PasswordManager</item>
+    </style>
+
 </resources>

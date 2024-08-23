@@ -2,4 +2,14 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="red">#ff000d</color>
+    <color name="confirmGreen">#00b017</color>
+    <color name="disabledBtn">#696969</color>
+
+    <color name="colorKellyWillTellMeToChange">#fab802</color>
+
+    <color name="splashScreenBlue">#FF64B4DD</color>
+
+    <color name="secondaryBlue">#C4E3F5</color>
 </resources>
