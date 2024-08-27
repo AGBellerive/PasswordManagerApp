@@ -8,7 +8,7 @@ import android.widget.Toast
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 
 class MainActivity : AppCompatActivity() {
-    private var time : Long = 3000 //3000 3 seconds for splash screen
+    private var time : Long = 1500 //3000 3 seconds for splash screen
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Thread.sleep(time)

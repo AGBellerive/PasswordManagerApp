@@ -14,4 +14,13 @@
     <string name="fileFound">File Selected</string>
 
     <string name="accountName">Account Name</string>
+
+    <string name="site">Site</string>
+    <string name="username">Username</string>
+    <string name="other">Other</string>
+    <string name="email">Email</string>
+    <string name="search">Search</string>
+
+    <string name="placeholder">Placeholder</string>
+
 </resources>

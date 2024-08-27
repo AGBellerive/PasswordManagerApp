@@ -13,4 +13,13 @@
         <item name="postSplashScreenTheme">@style/Base.Theme.PasswordManager</item>
     </style>
 
+    <style name="vaultLabels">
+        <item name="android:textColor">@color/darkNavy</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="vaultValues">
+        <item name="android:textColor">@color/darkGrey</item>
+        <item name="android:textSize">20sp</item>
+    </style>
 </resources>

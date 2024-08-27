@@ -4,10 +4,7 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 class Account(
-    private var Site: String,
-    private var Username: String,
-    private var Email: String,
-    private var Password: String,
-    private var Others: String
+    var Site: String, var Username: String, var Email: String, var Password: String, var Others: String
 ) {
+
 }

@@ -12,4 +12,8 @@
     <color name="splashScreenBlue">#FF64B4DD</color>
 
     <color name="secondaryBlue">#C4E3F5</color>
+
+    <color name="darkNavy">#1F3A93</color>
+    <color name="darkGrey">#333333</color>
+    <color name="charcoal">#2E4053</color>
 </resources>

@@ -14,12 +14,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SwitchCompat
 import androidx.core.content.ContextCompat
-import java.io.File
 
 
 class SetUpActivity : AppCompatActivity() {
 
-    private lateinit var file : File
     private lateinit var fileUri : String
 
     private lateinit var password : EditText
@@ -95,8 +93,6 @@ class SetUpActivity : AppCompatActivity() {
         if(requestCode == 460 && resultCode == Activity.RESULT_OK && data != null){
             val uri : Uri? = data.data
 
-            //val takeFlags = data?.flags ?: (0 and (Intent.FLAG_GRANT_READ_URI_PERMISSION))
-
             if (uri != null) {
                 contentResolver.takePersistableUriPermission(uri,Intent.FLAG_GRANT_READ_URI_PERMISSION)
             }
@@ -126,7 +122,6 @@ class SetUpActivity : AppCompatActivity() {
             putString("path",fileUri)
             apply()
         }
-        Toast.makeText(this,"it worked",Toast.LENGTH_SHORT).show()
         startActivity(Intent(this,VaultActivity::class.java))
     }
 }
