@@ -11,7 +11,6 @@ class MainActivity : AppCompatActivity() {
     private var time : Long = 3000 //3000 3 seconds for splash screen
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Toast.makeText(this,"Runs first then sleeps",Toast.LENGTH_LONG).show()
         Thread.sleep(time)
 
         installSplashScreen()

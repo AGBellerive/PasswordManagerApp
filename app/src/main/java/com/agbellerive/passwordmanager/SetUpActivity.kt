@@ -1,5 +1,7 @@
 package com.agbellerive.passwordmanager
 
+import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -18,6 +20,7 @@ import java.io.File
 class SetUpActivity : AppCompatActivity() {
 
     private lateinit var file : File
+    private lateinit var fileUri : String
 
     private lateinit var password : EditText
     private lateinit var passwordConfirm : EditText
@@ -25,7 +28,6 @@ class SetUpActivity : AppCompatActivity() {
 
     private lateinit var matchingWarning : TextView
     private lateinit var lengthWarning : TextView
-    private lateinit var fileName : TextView
 
     private lateinit var biometric: SwitchCompat
 
@@ -49,13 +51,10 @@ class SetUpActivity : AppCompatActivity() {
 
         confirmButton = findViewById(R.id.confirm_button)
 
-        fileName = findViewById(R.id.fileName)
-
 
         //https://medium.com/@mdayanc/how-to-use-on-focus-change-to-format-edit-text-on-android-studio-bf59edf66161
         password.onFocusChangeListener = OnFocusChangeListener { view, hasFocus ->
             if (!hasFocus) {
-                Toast.makeText(this,"Not Has focus",Toast.LENGTH_SHORT).show()
                 if(password.length() <= 8){
                     lengthWarning.visibility = View.VISIBLE;
                 }
@@ -80,26 +79,32 @@ class SetUpActivity : AppCompatActivity() {
     }
 
     fun browseOnClick(view: View) {
-        val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
-        intent.addCategory(Intent.CATEGORY_OPENABLE)
-        intent.setType("application/json") // this will search specifically for document type of .json
 
-        startActivityForResult(intent, 100)
+        val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
+            addCategory(Intent.CATEGORY_OPENABLE)
+            type ="application/json" // this will search specifically for document type of .json
+        }
+
+        startActivityForResult(intent, 460)
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        if(requestCode == 100 && resultCode == RESULT_OK && data != null){
-            val uri : Uri? = data.data
-            val pathToFile : String = uri?.path.toString()
-            file = File(pathToFile)
-
-            fileCheck = (pathToFile.isNotBlank())
-            //fileName.text = file.name
-            //todo get file name
-            buttonCheck();
-
-        }
         super.onActivityResult(requestCode, resultCode, data)
+
+        if(requestCode == 460 && resultCode == Activity.RESULT_OK && data != null){
+            val uri : Uri? = data.data
+
+            //val takeFlags = data?.flags ?: (0 and (Intent.FLAG_GRANT_READ_URI_PERMISSION))
+
+            if (uri != null) {
+                contentResolver.takePersistableUriPermission(uri,Intent.FLAG_GRANT_READ_URI_PERMISSION)
+            }
+
+            fileUri = uri.toString()
+            fileCheck = fileUri.isNotBlank()
+            buttonCheck();
+        }
     }
 
     private fun buttonCheck(){
@@ -112,7 +117,16 @@ class SetUpActivity : AppCompatActivity() {
         }
     }
     fun confirmOnClick(view: View) {
-        //save things to memory like biometrics,password, hint, and file location then start the next
-        // intent which will be vault activity
+        val sharedPref = getSharedPreferences("manager-info", Context.MODE_PRIVATE)
+        with(sharedPref.edit()) {
+            //key, value
+            putBoolean("biometrics",biometric.isChecked)
+            putString("password",password.text.toString())
+            putString("hint",passwordHint.text.toString())
+            putString("path",fileUri)
+            apply()
+        }
+        Toast.makeText(this,"it worked",Toast.LENGTH_SHORT).show()
+        startActivity(Intent(this,VaultActivity::class.java))
     }
 }

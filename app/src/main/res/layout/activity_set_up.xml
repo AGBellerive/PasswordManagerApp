@@ -93,13 +93,13 @@
             android:layout_marginBottom="15dp"
             android:autofillHints="confirm password"
             android:ems="10"
-            android:inputType="textPassword" />
+            android:inputType="text" />
 
         <androidx.appcompat.widget.SwitchCompat
             android:id="@+id/biometricToggle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/auth" />
+            android:text="@string/auth"/>
 
 
     </LinearLayout>
@@ -131,15 +131,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/fileName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        app:layout_constraintBottom_toTopOf="@+id/confirm_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/browse_button" />
+<!--    <TextView-->
+<!--        android:id="@+id/fileName"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="@string/fileFound"-->
+<!--        android:textColor="@color/confirmGreen"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/confirm_button"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/browse_button" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

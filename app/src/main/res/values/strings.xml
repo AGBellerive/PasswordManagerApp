@@ -11,4 +11,7 @@
     <string name= "lenPassword">The passwords length is not long enough</string>
     <string name="confirm">Confirm</string>
     <string name="auth">Use device biometrics</string>
+    <string name="fileFound">File Selected</string>
+
+    <string name="accountName">Account Name</string>
 </resources>
