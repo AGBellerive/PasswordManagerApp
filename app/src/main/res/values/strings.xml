@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">PasswordManager</string>
+    <string name="shorter_app_name">Passwords</string>
+
+    <!-- Set Up Activity-->
+    <string name="setUpWelcome">Set up</string>
+    <string name="BrwsFile">Browse File</string>
+    <string name="password">Password</string>
+    <string name="confPass">Confirm Password</string>
+    <string name="passHint">Password Hint</string>
+    <string name="incPassword">The passwords do not match</string>
+    <string name= "lenPassword">The passwords length is not long enough</string>
+    <string name="confirm">Confirm</string>
+    <string name="auth">Use device biometrics</string>
+    <string name="fileFound">File Selected</string>
+
+    <string name="accountName">Account Name</string>
+
+    <string name="site">Site</string>
+    <string name="username">Username</string>
+    <string name="other">Other</string>
+    <string name="email">Email</string>
+    <string name="search">Search</string>
+
+    <string name="placeholder">Placeholder</string>
+
+    <string name="masterPassword">Master Password</string>
+    <string name="enter">Enter</string>
+
+
+</resources>

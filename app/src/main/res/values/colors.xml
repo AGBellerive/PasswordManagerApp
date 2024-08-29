@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="red">#ff000d</color>
+    <color name="confirmGreen">#00b017</color>
+    <color name="disabledBtn">#696969</color>
+
+    <color name="colorKellyWillTellMeToChange">#fab802</color>
+
+    <color name="splashScreenBlue">#FF64B4DD</color>
+
+    <color name="secondaryBlue">#C4E3F5</color>
+
+    <color name="darkNavy">#1F3A93</color>
+    <color name="darkGrey">#333333</color>
+    <color name="charcoal">#2E4053</color>
+</resources>

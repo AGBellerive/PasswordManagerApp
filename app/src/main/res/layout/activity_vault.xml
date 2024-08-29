@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/secondaryBlue"
+    tools:context=".VaultActivity">
+
+    <EditText
+        android:id="@+id/searchAccount"
+        android:layout_width="273dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="5dp"
+        android:ems="10"
+        android:hint="@string/accountName"
+        android:inputType="text"
+        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="98dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="15dp"
+        android:onClick="searchOnClick"
+        android:text="@string/search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/searchAccount"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/allAccounts"
+        android:layout_width="413dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/otherLabel" />
+
+    <TextView
+        android:id="@+id/siteLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="50dp"
+        android:text="@string/site"
+        android:theme="@style/vaultLabels"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchAccount" />
+
+    <TextView
+        android:id="@+id/usernameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/username"
+        android:theme="@style/vaultLabels"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/siteLabel" />
+
+    <TextView
+        android:id="@+id/emailLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/email"
+        android:theme="@style/vaultLabels"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usernameLabel" />
+
+    <TextView
+        android:id="@+id/password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/password"
+        android:theme="@style/vaultLabels"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailLabel" />
+
+    <TextView
+        android:id="@+id/otherLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:text="@string/other"
+        android:theme="@style/vaultLabels"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password" />
+
+    <TextView
+        android:id="@+id/siteDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:maxWidth="250dp"
+        android:text="@string/placeholder"
+        android:theme="@style/vaultValues"
+        app:layout_constraintStart_toStartOf="@+id/usernameDisplay"
+        app:layout_constraintTop_toBottomOf="@+id/searchAccount"
+        android:onClick="displayValueOnClick"/>
+
+    <TextView
+        android:id="@+id/usernameDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:maxWidth="250dp"
+        android:text="@string/placeholder"
+        android:theme="@style/vaultValues"
+        app:layout_constraintStart_toStartOf="@+id/emailDisplay"
+        app:layout_constraintTop_toBottomOf="@+id/siteDisplay"
+        android:onClick="displayValueOnClick"/>
+
+    <TextView
+        android:id="@+id/emailDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:maxWidth="250dp"
+        android:text="@string/placeholder"
+        android:theme="@style/vaultValues"
+        app:layout_constraintStart_toStartOf="@+id/passwordDisplay"
+        app:layout_constraintTop_toBottomOf="@+id/usernameDisplay"
+        android:onClick="displayValueOnClick"/>
+
+    <TextView
+        android:id="@+id/passwordDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:maxWidth="250dp"
+        android:text="@string/placeholder"
+        android:theme="@style/vaultValues"
+        app:layout_constraintStart_toStartOf="@+id/otherDisplay"
+        app:layout_constraintTop_toBottomOf="@+id/emailDisplay"
+        android:onClick="displayValueOnClick"/>
+
+    <TextView
+        android:id="@+id/otherDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="30dp"
+        android:maxWidth="250dp"
+        android:text="@string/placeholder"
+        android:theme="@style/vaultValues"
+        app:layout_constraintStart_toEndOf="@+id/otherLabel"
+        app:layout_constraintTop_toBottomOf="@+id/passwordDisplay" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
