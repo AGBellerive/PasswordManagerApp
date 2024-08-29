@@ -3,6 +3,12 @@
     <style name="Base.Theme.PasswordManager" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/splashScreenBlue</item>
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textColorHint">@color/disabledBtn</item>
+        <item name="android:textCursorDrawable">@color/black</item>
+        <item name="backgroundTint">@color/black</item>
+
     </style>
 
     <style name="Theme.PasswordManager" parent="Base.Theme.PasswordManager" />

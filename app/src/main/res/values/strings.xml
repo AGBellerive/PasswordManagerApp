@@ -23,4 +23,8 @@
 
     <string name="placeholder">Placeholder</string>
 
+    <string name="masterPassword">Master Password</string>
+    <string name="enter">Enter</string>
+
+
 </resources>

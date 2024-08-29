@@ -59,9 +59,7 @@ class VaultActivity : AppCompatActivity() {
             override fun onItemClick(position: Int) {
                 setDisplay(allAccounts[position])
             }
-
         })
-
     }
 
     fun searchOnClick(view: View) {
@@ -85,6 +83,6 @@ class VaultActivity : AppCompatActivity() {
         usernameDisplay.text = account.Username
         emailDisplay.text = account.Email
         passwordDisplay.text = account.Password
-        otherDisplay.text = account.Others
+        otherDisplay.text = account.Other
     }
 }

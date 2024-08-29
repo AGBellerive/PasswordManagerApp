@@ -49,7 +49,6 @@ class SetUpActivity : AppCompatActivity() {
 
         confirmButton = findViewById(R.id.confirm_button)
 
-
         //https://medium.com/@mdayanc/how-to-use-on-focus-change-to-format-edit-text-on-android-studio-bf59edf66161
         password.onFocusChangeListener = OnFocusChangeListener { view, hasFocus ->
             if (!hasFocus) {
@@ -77,12 +76,10 @@ class SetUpActivity : AppCompatActivity() {
     }
 
     fun browseOnClick(view: View) {
-
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT).apply {
             addCategory(Intent.CATEGORY_OPENABLE)
             type ="application/json" // this will search specifically for document type of .json
         }
-
         startActivityForResult(intent, 460)
     }
 
@@ -118,10 +115,12 @@ class SetUpActivity : AppCompatActivity() {
             //key, value
             putBoolean("biometrics",biometric.isChecked)
             putString("password",password.text.toString())
+            //putString("password",password.text.toString().hashCode())
             putString("hint",passwordHint.text.toString())
             putString("path",fileUri)
             apply()
         }
         startActivity(Intent(this,VaultActivity::class.java))
+        finish()
     }
 }

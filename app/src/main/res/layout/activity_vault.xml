@@ -38,7 +38,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/allAccounts"
         android:layout_width="413dp"
-        android:layout_height="200dp"
+        android:layout_height="0dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="125dp"
         android:layout_marginBottom="8dp"

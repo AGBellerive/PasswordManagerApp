@@ -30,8 +30,6 @@ class AccountsAdapter (private val allAccounts: ArrayList<Account>): RecyclerVie
         val account = allAccounts[position]
         holder.itemView.findViewById<TextView>(R.id.cellAccount).text = account.Site
     }
-
-
 }
 
 class CustomViewHolder(view: View, listiner: AccountsAdapter.onClickListner) : RecyclerView.ViewHolder(view){

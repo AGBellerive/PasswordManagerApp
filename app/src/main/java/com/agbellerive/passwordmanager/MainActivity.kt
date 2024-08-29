@@ -17,10 +17,12 @@ class MainActivity : AppCompatActivity() {
 
         val sharedPref = getSharedPreferences("manager-info", Context.MODE_PRIVATE)
         if(sharedPref.contains("path")){ //if there is a path saved in shared pref, open
-            startActivity(Intent(this,VaultActivity::class.java))
+            startActivity(Intent(this,PasswordActivity::class.java))
+            finish() // this prevents the user from just clicking back to go to the previous activity
         }
         else{
             startActivity(Intent(this,SetUpActivity::class.java))
+            finish()
         }
     }
 }
