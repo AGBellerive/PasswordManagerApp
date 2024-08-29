@@ -115,7 +115,7 @@ class SetUpActivity : AppCompatActivity() {
             //key, value
             putBoolean("biometrics",biometric.isChecked)
             putString("password",password.text.toString())
-            //putString("password",password.text.toString().hashCode())
+            //putInt("password",password.text.toString().hashCode())
             putString("hint",passwordHint.text.toString())
             putString("path",fileUri)
             apply()

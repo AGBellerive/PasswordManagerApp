@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
+//This is for the recycler view and allows it to have functionality
 class AccountsAdapter (private val allAccounts: ArrayList<Account>): RecyclerView.Adapter<CustomViewHolder>() {
 
     private lateinit var mlistner: onClickListner //https://www.youtube.com/watch?v=dB9JOsVx-yY

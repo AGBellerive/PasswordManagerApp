@@ -6,7 +6,7 @@
         <item name="colorPrimary">@color/splashScreenBlue</item>
         <item name="android:textColorPrimary">@color/black</item>
         <item name="android:textColorHint">@color/disabledBtn</item>
-        <item name="android:textCursorDrawable">@color/black</item>
+<!--        <item name="android:textCursorDrawable">@color/black</item>-->
         <item name="backgroundTint">@color/black</item>
 
     </style>

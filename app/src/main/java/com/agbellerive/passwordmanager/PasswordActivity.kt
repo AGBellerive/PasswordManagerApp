@@ -6,12 +6,12 @@ import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.KeyEvent
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
 import androidx.biometric.BiometricManager
 import androidx.biometric.BiometricManager.Authenticators.BIOMETRIC_STRONG
-import androidx.biometric.BiometricManager.Authenticators.DEVICE_CREDENTIAL
 import androidx.biometric.BiometricPrompt
 import androidx.core.content.ContextCompat
 import java.util.concurrent.Executor
@@ -30,7 +30,6 @@ class PasswordActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_password)
-
 
         masterPassword = findViewById(R.id.masterPassword)
         sharedPref = getSharedPreferences("manager-info", Context.MODE_PRIVATE)
@@ -51,7 +50,13 @@ class PasswordActivity : AppCompatActivity() {
             }
         }
 
-
+        masterPassword.setOnKeyListener { view, keycode, keyEvent ->
+            if(keyEvent.action == KeyEvent.ACTION_DOWN && keycode == KeyEvent.KEYCODE_ENTER){
+                enterVault(view)
+                return@setOnKeyListener true
+            }
+            return@setOnKeyListener false
+        }
     }
 
     fun enterVault(view: View) {
@@ -86,7 +91,6 @@ class PasswordActivity : AppCompatActivity() {
 
                 override fun onAuthenticationSucceeded(result: BiometricPrompt.AuthenticationResult) {
                     super.onAuthenticationSucceeded(result)
-                    Toast.makeText(applicationContext,"Authenticated ",Toast.LENGTH_SHORT).show()
                     startActivity(Intent(applicationContext, VaultActivity::class.java))
                     finish()
                 }

@@ -1,10 +1,15 @@
 package com.agbellerive.passwordmanager
 
 import android.app.Activity
+import android.content.ClipData
+import android.content.ClipDescription
+import android.content.ClipboardManager
 import android.content.Context
 import android.content.SharedPreferences
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
@@ -71,7 +76,6 @@ class VaultActivity : AppCompatActivity() {
 
                 val imm = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
                 imm.hideSoftInputFromWindow(view.windowToken,0)
-
                 break
             }
         }
@@ -84,5 +88,28 @@ class VaultActivity : AppCompatActivity() {
         emailDisplay.text = account.Email
         passwordDisplay.text = account.Password
         otherDisplay.text = account.Other
+    }
+
+    //https://developer.android.com/develop/ui/views/touch-and-input/copy-paste
+    fun displayValueOnClick(view: View) {
+        val clipboardManager = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
+
+        when(view.id){
+            siteDisplay.id -> clipboardManager.setPrimaryClip(ClipData.newPlainText   ("", siteDisplay.text))
+            usernameDisplay.id -> clipboardManager.setPrimaryClip(ClipData.newPlainText   ("", usernameDisplay.text))
+            emailDisplay.id -> clipboardManager.setPrimaryClip(ClipData.newPlainText   ("", emailDisplay.text))
+            passwordDisplay.id -> {
+                val clipData = ClipData.newPlainText   ("", passwordDisplay.text)
+                clipData.apply {
+                    description.extras = PersistableBundle().apply {
+                        putBoolean(ClipDescription.EXTRA_IS_SENSITIVE,true)
+                        putBoolean("android.content.extra.IS_SENSITIVE", true)
+                    }
+                }
+                clipboardManager.setPrimaryClip(clipData)
+            }
+        }
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.S_V2)
+            Toast.makeText(this, "Copied", Toast.LENGTH_SHORT).show()
     }
 }

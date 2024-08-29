@@ -9,6 +9,10 @@ import java.io.InputStreamReader
 
 
 class FileManager {
+
+    /**
+     * This function is the core of reading and parsing the password file
+     */
     fun readDocumentFromUri(uri: Uri,context: Context) : ArrayList<Account> {
         val contentResolver = context.contentResolver
         var allText = ""
