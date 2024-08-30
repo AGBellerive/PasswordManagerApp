@@ -35,6 +35,7 @@ class FileManager {
         for (match in matches) {
             allAccounts.add(Json.decodeFromString<Account>(match.value))
         }
+        if(allAccounts.isEmpty()) allAccounts.add(Account("Error Reading the file","Check file format","","",""))
         return allAccounts
     }
 }

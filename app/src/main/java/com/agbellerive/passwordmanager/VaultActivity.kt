@@ -95,7 +95,6 @@ class VaultActivity : AppCompatActivity() {
         val clipboardManager = getSystemService(CLIPBOARD_SERVICE) as ClipboardManager
 
         when(view.id){
-            siteDisplay.id -> clipboardManager.setPrimaryClip(ClipData.newPlainText   ("", siteDisplay.text))
             usernameDisplay.id -> clipboardManager.setPrimaryClip(ClipData.newPlainText   ("", usernameDisplay.text))
             emailDisplay.id -> clipboardManager.setPrimaryClip(ClipData.newPlainText   ("", emailDisplay.text))
             passwordDisplay.id -> {
