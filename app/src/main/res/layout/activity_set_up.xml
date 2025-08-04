@@ -7,16 +7,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SetUpActivity"
-    android:background="@color/secondaryBlue">
+    android:background="@color/splashScreenBlue">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:theme="@style/vaultLabels"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:padding="10dp"
         android:text="@string/setUpWelcome"
-        android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,8 +35,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/password"
-            android:textSize="20sp" />
+            android:theme="@style/vaultLabels"
+            android:text="@string/password" />
 
         <EditText
             android:id="@+id/password"
@@ -59,8 +59,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/confPass"
-            android:textSize="20sp" />
+            android:theme="@style/vaultLabels"
+            android:text="@string/confPass" />
 
         <EditText
             android:id="@+id/confirmedPassword"
@@ -83,8 +83,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/passHint"
-            android:textSize="20sp" />
+            android:theme="@style/vaultLabels"
+            android:text="@string/passHint" />
 
         <EditText
             android:id="@+id/passwordHint"
@@ -96,6 +96,8 @@
             android:inputType="text" />
 
         <androidx.appcompat.widget.SwitchCompat
+            android:theme="@style/vaultLabels"
+            android:textColor="@color/white"
             android:id="@+id/biometricToggle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
